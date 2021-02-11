@@ -26,11 +26,13 @@
             "styles": [
               "src/styles.css",
               "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
+              "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/bulma-modal-fx/dist/css/modal-fx.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/slick-carousel/slick/slick.min.js"
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "node_modules/bulma-modal-fx/dist/js/modal-fx.min.js"
             ]
           },
           "configurations": {

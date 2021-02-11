@@ -19,7 +19,7 @@ export class MovieSingleComponent implements OnInit {
       value['backdrop_path'] = "https://image.tmdb.org/t/p/w500" + value['backdrop_path']
 
         this.movieData = value
-        console.log(value)
+        console.log("bla")
       })
       
     })

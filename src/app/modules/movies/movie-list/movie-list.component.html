@@ -5,12 +5,16 @@
       #slickModal="slick-carousel"
       [config]="slideConfig"
     >
-      <div ngxSlickItem *ngFor="let movie of movies.results" class="slide">
-        <a routerLink="/{{ movie.id }}" class="mt-2">
-          <img [src]="movie.backdrop_path" />
-        </a>
+      <div ngxSlickItem *ngFor="let movie of movies.results" class="slide" >
+        
+          <img [src]="movie.backdrop_path" (click)="selectMovie(movie.id, movie.title)"/>
           <p class="has-text-white has-text-centered">{{ movie.title }}</p>
+        
       </div>
     </ngx-slick-carousel>
+    <app-modal *ngIf="showModal" (onClose)="showModal=false" id={{id}} name={{name}}></app-modal>
     </div>
 </section>
+
+<!-- <app-modal *ngIf="showModal" (onClose)="showModal=false"></app-modal>
+    <button class="button is-primary" (click)="selectMovie()" style='margin: 5em;'>Choose</button> -->

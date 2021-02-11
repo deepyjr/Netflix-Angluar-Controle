@@ -22,4 +22,9 @@ export class MovieService {
     var temp = this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}`)
     return temp
   }
+
+  getTrailer(name) {
+    var temp = this.http.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${name}&type=video&key=AIzaSyCkcdQa7VpeeVtNdMBIZXp0iwKdHTS7iqY`)
+    return temp
+  }
 }

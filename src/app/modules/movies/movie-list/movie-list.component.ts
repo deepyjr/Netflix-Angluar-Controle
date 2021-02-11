@@ -10,8 +10,11 @@ import { MovieService } from 'src/app/movie.service';
 export class MovieListComponent implements OnInit {
  
   slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
+
   
-  
+  showModal: boolean = false
+  id;
+  name;
   movies;
 
   constructor(private movieService: MovieService) { }
@@ -29,5 +32,14 @@ export class MovieListComponent implements OnInit {
       this.movies = value
     });
   }
+
+  selectMovie(id, name) {
+    this.id = id
+    this.name = name
+    this.showModal = true;
+    
+  }
+
+  
 
 }
