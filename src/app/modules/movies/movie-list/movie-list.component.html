@@ -1,0 +1,43 @@
+<ngx-slick-carousel
+  class="carousel"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+  (init)="slickInit($event)"
+  (breakpoint)="breakpoint($event)"
+  (afterChange)="afterChange($event)"
+  (beforeChange)="beforeChange($event)"
+>
+  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+    <img src="{{ slide.img }}" alt="" width="100%" />
+  </div>
+</ngx-slick-carousel>
+
+<button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <!-- <div class="column is-4" *ngFor="let user of users | async">
+                <div class="card">
+                    <div class="card-content">
+                        <a routerLink="/users/{{ user.login }}"> {{ user.login }} </a>
+                    </div>
+                </div>
+            </div> -->
+
+      <div class="column is-4" *ngFor="let movie of movies.results">
+        <div class="card">
+          <!-- <a routerLink="/{{ movie.id }}"> -->
+            <div class="card-content">
+              <img [src]="movie.backdrop_path" />
+              <p>{{ movie.title }}</p>
+            </div>
+          <!-- </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
