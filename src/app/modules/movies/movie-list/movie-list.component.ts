@@ -55,7 +55,6 @@ export class MovieListComponent implements OnInit {
         
       })
       this.movies = value
-      console.log(this.movies)
     });
   }
 

@@ -1,24 +1,23 @@
-<ngx-slick-carousel
-  class="carousel"
-  #slickModal="slick-carousel"
-  [config]="slideConfig"
-  (init)="slickInit($event)"
-  (breakpoint)="breakpoint($event)"
-  (afterChange)="afterChange($event)"
-  (beforeChange)="beforeChange($event)"
->
-  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <img src="{{ slide.img }}" alt="" width="100%" />
-  </div>
-</ngx-slick-carousel>
-
-<button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button>
-
 <section class="section">
   <div class="container">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)"
+    >
+      <div ngxSlickItem *ngFor="let movie of movies.results" class="slide">
+        <a routerLink="/{{ movie.id }}">
+          <img [src]="movie.backdrop_path" />
+        </a>
+          <p>{{ movie.title }}</p>
+        
+        <!-- <img [src]="movie.backdrop_path" alt="" width="100%" /> -->
+      </div>
+    </ngx-slick-carousel>
     <div class="columns is-multiline">
       <!-- <div class="column is-4" *ngFor="let user of users | async">
                 <div class="card">
@@ -30,12 +29,12 @@
 
       <div class="column is-4" *ngFor="let movie of movies.results">
         <div class="card">
-          <!-- <a routerLink="/{{ movie.id }}"> -->
-            <div class="card-content">
+          <div class="card-content">
+            <a routerLink="/{{ movie.id }}">
               <img [src]="movie.backdrop_path" />
               <p>{{ movie.title }}</p>
-            </div>
-          <!-- </a> -->
+            </a>
+          </div>
         </div>
       </div>
     </div>

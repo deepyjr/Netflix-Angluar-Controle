@@ -17,4 +17,9 @@ export class MovieService {
     var temp = this.http.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=${this.apiKey}`)
     return temp
   }
+
+  getMovieData(id) {
+    var temp = this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}`)
+    return temp
+  }
 }
