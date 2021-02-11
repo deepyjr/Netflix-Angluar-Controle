@@ -1,42 +1,16 @@
-<section class="section">
+<section class="hero  is-fullheight is-bold" style='background-color: #141414;'>
   <div class="container">
     <ngx-slick-carousel
       class="carousel"
       #slickModal="slick-carousel"
       [config]="slideConfig"
-      (init)="slickInit($event)"
-      (breakpoint)="breakpoint($event)"
-      (afterChange)="afterChange($event)"
-      (beforeChange)="beforeChange($event)"
     >
       <div ngxSlickItem *ngFor="let movie of movies.results" class="slide">
-        <a routerLink="/{{ movie.id }}">
+        <a routerLink="/{{ movie.id }}" class="mt-2">
           <img [src]="movie.backdrop_path" />
         </a>
-          <p>{{ movie.title }}</p>
-        
-        <!-- <img [src]="movie.backdrop_path" alt="" width="100%" /> -->
+          <p class="has-text-white has-text-centered">{{ movie.title }}</p>
       </div>
     </ngx-slick-carousel>
-    <div class="columns is-multiline">
-      <!-- <div class="column is-4" *ngFor="let user of users | async">
-                <div class="card">
-                    <div class="card-content">
-                        <a routerLink="/users/{{ user.login }}"> {{ user.login }} </a>
-                    </div>
-                </div>
-            </div> -->
-
-      <div class="column is-4" *ngFor="let movie of movies.results">
-        <div class="card">
-          <div class="card-content">
-            <a routerLink="/{{ movie.id }}">
-              <img [src]="movie.backdrop_path" />
-              <p>{{ movie.title }}</p>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
