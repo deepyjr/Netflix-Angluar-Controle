@@ -1,5 +1,32 @@
 <section class="hero  is-fullheight is-bold" style='background-color: #141414;'>
   <div class="container">
+    <h1 style='font-weight: 600; font-size: 3em; margin-left: 30px;'>Films recommandés</h1>
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let movie of movies.results" class="slide" >
+        
+          <img [src]="movie.backdrop_path" (click)="selectMovie(movie.id, movie.title)"/>
+          <p class="has-text-white has-text-centered">{{ movie.title }}</p>
+        
+      </div>
+    </ngx-slick-carousel>
+    <h1 style='font-weight: 600; font-size: 3em; margin-left: 30px;'>Films les mieux notés</h1>
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div ngxSlickItem *ngFor="let movie of movies.results" class="slide" >
+        
+          <img [src]="movie.backdrop_path" (click)="selectMovie(movie.id, movie.title)"/>
+          <p class="has-text-white has-text-centered">{{ movie.title }}</p>
+        
+      </div>
+    </ngx-slick-carousel>
+    <h1 style='font-weight: 600; font-size: 3em; margin-left: 30px;'>Films Incroyables</h1>
     <ngx-slick-carousel
       class="carousel"
       #slickModal="slick-carousel"

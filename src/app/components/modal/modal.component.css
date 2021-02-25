@@ -3,6 +3,7 @@
 }
 .modal-card-title {
     color: #fff;
+    font-weight: 550;
 }
 .modal-card-body {
     background-color: #363636;
@@ -24,6 +25,12 @@ p {
     height: 100%;
 }
 
+h1 {
+    font-weight: 600; 
+    font-size: 3em; 
+    margin-left: 10vh;
+    color: #aaaaaa
+}
 img {
     width: 50%; 
     height:70%;
@@ -52,3 +59,7 @@ img {
 	}
 }
 
+iframe {
+    margin-top: auto;
+    margin-bottom: auto;
+}

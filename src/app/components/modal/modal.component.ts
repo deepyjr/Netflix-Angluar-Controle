@@ -24,7 +24,6 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
       this.movieService.getMovieData(this.id).subscribe((value) => {
       value['backdrop_path'] = "https://image.tmdb.org/t/p/w500" + value['backdrop_path']
-
         this.movieData = value
       })
       this.movieService.getTrailer(this.name).subscribe((value) => {
